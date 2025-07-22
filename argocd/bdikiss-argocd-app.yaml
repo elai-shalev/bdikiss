@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bdikiss-gitops
+  namespace: orchestrator-gitops
+  labels:
+    app-type: workflow
+    app: bdikiss
+    rht-gitops.com/janus-argocd: bdikiss-gitops
+spec:
+  destination:
+    namespace: rhdh
+    server: https://kubernetes.default.svc
+  project: orchestrator-gitops
+  source:
+    path: ./kustomize/base
+    repoURL: git@github.com:elai-shalev/bdikiss-gitops.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

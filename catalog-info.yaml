@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: bdikiss
+  description: bdikiss
+  annotations:
+    argocd/app-selector: rht-gitops.com/janus-argocd=bdikiss
+    backstage.io/kubernetes-namespace: orchestrator-gitops
+    backstage.io/kubernetes-id: bdikiss-ci
+    janus-idp.io/tekton: bdikiss
+    github.com/project-slug: elai-shalev/bdikiss
+    gitlab.com/project-slug: elai-shalev/bdikiss
+spec:
+  type: workflow-project
+  system: system:default/janus-orchestrator
+  lifecycle: development
+  owner: user:default/elai-shalev
