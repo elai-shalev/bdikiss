@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: bdikiss-gitops
-  namespace: orchestrator-gitops
+  namespace: openshift-gitops
   labels:
     app-type: workflow
     app: bdikiss
@@ -11,7 +11,7 @@ spec:
   destination:
     namespace: rhdh
     server: https://kubernetes.default.svc
-  project: orchestrator-gitops
+  project: openshift-gitops
   source:
     path: ./kustomize/base
     repoURL: git@github.com:elai-shalev/bdikiss-gitops.git
