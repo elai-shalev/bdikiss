@@ -3,8 +3,8 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  name: bdikiss-000f497
-  namespace: openshift-gitops
+  name: bdikiss-daf5250
+  namespace: orchestrator-gitops
   labels:
     backstage.io/kubernetes-id: bdikiss-ci
 spec:
